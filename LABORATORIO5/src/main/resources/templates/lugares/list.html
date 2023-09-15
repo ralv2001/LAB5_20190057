@@ -28,6 +28,7 @@
                         <td th:text="${lugar.nombre_lugar}"></td>
                         <td th:text="${lugar.descrip_lugar}"></td>
                         <td th:text="${lugar.fecha_lugar}"></td>
+                        <td th:text="${lugar.fotolugar}"></td>
                         <td><a class="btn btn-primary" th:href="@{'/lugares/edit?id=' + ${lugar.idLugares}}">Editar</a>
                         </td>
                         <td><a class="btn btn-danger" th:href="@{'/lugares/delete?id=' + ${lugar.idLugares}}">Borrar</a>
