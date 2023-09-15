@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+        <title>Lista de Viajes Programados</title>
+    </head>
+    <body>
+        <main>
+            <div class="container px-4 py-5">
+                <h1 class="pb-2 border-bottom">Lista de Viajes Programados</h1>
+                <div class="d-flex mt-3 mb-4">
+                    <a class="btn btn-primary" th:href="@{'/viajes/new'}">Nuevo Transportista</a>
+                    <a class="btn btn-primary" th:href="@{'/mascotas/list'}">Lista Mascotas</a>
+                    <a class="btn btn-secondary ms-auto" th:href="@{'/'}">Regresar</a>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>#</th>
+                        <th>Punto de Recojo</th>
+                        <th>Cantidad de Personas</th>
+                        <th>Nombre Persona</th>
+                        <th>Lugar</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr th:each="viaje, info : ${listaviajeshtml}">
+                        <td th:text="${info.index + 1}"></td>
+                        <td th:text="${viaje.punto_recojo}"></td>
+                        <td th:text="${viaje.cant_personas}"></td>
+                        <td th:text="${viaje.cant_perros}"></td>
+                        <td th:text="${viaje.persona.nombre}"></td>
+                        <td th:text="${viaje.lugares.nombre_lugar}"></td>
+                        <td><a class="btn btn-primary" th:href="@{'/viajes/edit?id=' + ${viaje.idViajes}}">Editar</a>
+                        </td>
+                        <td><a class="btn btn-danger" th:href="@{'/viajes/delete?id=' + ${viaje.idViajes}}">Borrar</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+        <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    </body>
+</html>
