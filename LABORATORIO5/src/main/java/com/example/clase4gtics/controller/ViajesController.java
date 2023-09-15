@@ -1,8 +1,6 @@
 package com.example.clase4gtics.controller;
 
-import com.example.clase4gtics.entity.Shipper;
 import com.example.clase4gtics.entity.Viajes;
-import com.example.clase4gtics.repository.ShipperRepository;
 import com.example.clase4gtics.repository.ViajesRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

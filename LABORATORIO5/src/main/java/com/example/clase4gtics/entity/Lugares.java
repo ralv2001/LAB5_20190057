@@ -26,4 +26,7 @@ public class Lugares {
     @Column(name = "fecha_lugar")
     private Date fecha_lugar;
 
+    @Column(name = "fotolugar")
+    private String fotolugar;
+
 }
