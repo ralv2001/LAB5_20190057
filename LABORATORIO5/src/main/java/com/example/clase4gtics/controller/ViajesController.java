@@ -26,7 +26,7 @@ public class ViajesController {
     }
 
     @GetMapping(value = {"/list", ""})
-    public String listarTransportistas(Model model) {
+    public String listarViajes(Model model) {
 
         List<Viajes> listaviajes = viajesRepository.findAll();
         model.addAttribute("listaviajeshtml", listaviajes);
@@ -46,7 +46,7 @@ public class ViajesController {
     }
 
     @GetMapping("/edit")
-    public String editarTransportista(Model model,
+    public String editarViaje(Model model,
                                       @RequestParam("id") int id) {
 
         Optional<Viajes> optViajes = viajesRepository.findById(id);
@@ -61,7 +61,7 @@ public class ViajesController {
     }
 
     @GetMapping("/delete")
-    public String borrarTransportista(Model model,
+    public String borrarViaje(Model model,
                                       @RequestParam("id") int id,
                                       RedirectAttributes attr) {
 
